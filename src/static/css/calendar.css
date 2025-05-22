@@ -1,0 +1,325 @@
+/* Calendar.css */
+.calendar-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.calendar {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.col {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+.col-start {
+  text-align: left;
+}
+
+.col-center {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.col-end {
+  text-align: right;
+}
+
+.icon {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.icon:hover {
+  background-color: #e0e0e0;
+}
+
+.today-button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.today-button:hover {
+  background-color: #1557b0;
+}
+
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 0;
+  background-color: #f8f9fa;
+}
+
+.days .col {
+  font-weight: 500;
+  color: #757575;
+  font-size: 0.9rem;
+}
+
+.body {
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.cell {
+  position: relative;
+  height: 100px;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #fff;
+  flex: 1;
+  min-width: 0;
+}
+
+.cell:hover {
+  background-color: #f5f5f5;
+}
+
+.cell.disabled {
+  color: #c5c5c5;
+  pointer-events: none;
+  background-color: #f9f9f9;
+}
+
+.cell.selected {
+  border: 2px solid #1a73e8;
+}
+
+.cell.today {
+  background-color: #e8f0fe;
+  font-weight: bold;
+  color: #1a73e8;
+}
+
+.number {
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.events-container {
+  overflow: hidden;
+  max-height: 70px;
+}
+
+.event {
+  font-size: 0.8rem;
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: white;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Selected date events panel */
+.selected-date-events {
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.events-header h3 {
+  margin: 0;
+  color: #424242;
+}
+
+.add-event-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.add-event-btn:hover {
+  background-color: #1557b0;
+}
+
+.no-events {
+  color: #757575;
+  font-style: italic;
+}
+
+.events-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.event-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.event-details {
+  flex: 1;
+}
+
+.event-title {
+  font-weight: 500;
+  color: #424242;
+}
+
+.event-time {
+  font-size: 0.8rem;
+  color: #757575;
+  margin-top: 5px;
+}
+
+.event-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.edit-btn, .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.delete-btn:hover {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+@media (max-width: 768px) {
+  .calendar-container {
+    flex-direction: column;
+  }
+  
+  .selected-date-events {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+
+/* Overlapping event styles */
+.overlapping-event {
+  position: relative;
+}
+
+.overlapping-event::after {
+  content: '⚠️';
+  position: absolute;
+  top: -2px;
+  right: 2px;
+  font-size: 10px;
+}
+
+.overlapping-event-item {
+  background-color: #ffebee !important;
+  border: 1px solid #ffcdd2;
+}
+
+.overlapping-text {
+  color: #d32f2f !important;
+  font-weight: bold;
+}
+
+.overlap-indicator {
+  margin-left: 5px;
+  cursor: help;
+  font-size: 12px;
+}
+
+.overlap-notification {
+  background-color: #ffebee;
+  color: #d32f2f;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  margin-top: 5px;
+  border: 1px solid #ffcdd2;
+}
+
+/* Hover effects for overlapping events */
+.overlapping-event:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(211, 47, 47, 0.3);
+}
+
+.overlapping-event-item:hover {
+  box-shadow: 0 2px 8px rgba(211, 47, 47, 0.2);
+}
+
+.event:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(211, 47, 47, 0.3);
+}
+
+.event-item:hover {
+  box-shadow: 0 2px 8px rgba(211, 47, 47, 0.2);
+}
