@@ -325,3 +325,315 @@
 .event-item:hover {
   box-shadow: 0 2px 8px rgba(211, 47, 47, 0.2);
 }
+
+
+/* Date selector styling */
+.date-selector {
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    font-weight: 600;
+    color: #1a73e8;
+}
+
+.date-selector:hover {
+    background-color: #e8f0fe;
+}
+
+/* Date picker modal overlay */
+.date-picker-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.date-picker-modal {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    width: 320px;
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.date-picker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.date-picker-header h4 {
+    margin: 0;
+    color: #424242;
+    font-size: 1.1rem;
+}
+
+.clickable-year {
+    cursor: pointer;
+    color: #1a73e8;
+    text-decoration: underline;
+}
+
+.clickable-year:hover {
+    color: #1557b0;
+}
+
+.close-date-picker {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-date-picker:hover {
+    background-color: #f0f0f0;
+}
+
+/* Month picker grid */
+.month-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 20px;
+}
+
+.month-item {
+    padding: 12px 8px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    background-color: #f8f9fa;
+}
+
+.month-item:hover {
+    background-color: #e3f2fd;
+    color: #1a73e8;
+}
+
+.month-item.selected {
+    background-color: #1a73e8;
+    color: white;
+}
+
+/* Year picker */
+.year-picker-container {
+    padding: 20px;
+}
+
+
+.year-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.year-item {
+    padding: 10px 8px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    background-color: #f8f9fa;
+}
+
+.year-item:hover {
+    background-color: #e3f2fd;
+    color: #1a73e8;
+}
+
+.year-item.selected {
+    background-color: #1a73e8;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .date-picker-modal {
+        width: 90%;
+        margin: 20px;
+    }
+    
+    .month-picker-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .year-picker-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Updated date picker header */
+.date-picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.year-navigation {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.year-nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.year-nav-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.date-picker-header h4 {
+  margin: 0;
+  color: #424242;
+  font-size: 1.1rem;
+  min-width: 60px;
+  text-align: center;
+}
+
+.clickable-year {
+  text-decoration: none;
+  cursor: pointer;
+  color: #1a73e8;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  font-weight: 600;
+}
+
+.clickable-year:hover {
+  background-color: #e8f0fe;
+}
+
+.close-date-picker {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.close-date-picker:hover {
+  background-color: #f0f0f0;
+}
+
+/* Updated year picker - removed back button */
+.year-picker-container {
+  padding: 20px;
+}
+
+.year-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.year-item {
+  padding: 10px 8px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background-color: #f8f9fa;
+}
+
+.year-item:hover {
+  background-color: #e3f2fd;
+  color: #1a73e8;
+}
+
+.year-item.selected {
+  background-color: #1a73e8;
+  color: white;
+}
+
+/* Month picker remains the same */
+.month-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 20px;
+}
+
+.month-item {
+  padding: 12px 8px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background-color: #f8f9fa;
+}
+
+.month-item:hover {
+  background-color: #e3f2fd;
+  color: #1a73e8;
+}
+
+.month-item.selected {
+  background-color: #1a73e8;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .date-picker-modal {
+    width: 90%;
+    margin: 20px;
+  }
+  
+  .year-navigation {
+    gap: 10px;
+  }
+  
+  .month-picker-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .year-picker-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
