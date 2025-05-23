@@ -637,3 +637,89 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+
+/* Day header responsive styles */
+.day-header {
+  position: relative;
+}
+
+.day-short,
+.day-letter {
+  display: none;
+}
+
+.day-full {
+  display: block;
+}
+
+/* Tablet view - show abbreviated day names */
+@media (max-width: 768px) {
+  .day-full {
+    display: none;
+  }
+  
+  .day-short {
+    display: block;
+  }
+  
+  .day-letter {
+    display: none;
+  }
+}
+
+/* Mobile view - show single letters */
+@media (max-width: 480px) {
+  .day-full,
+  .day-short {
+    display: none;
+  }
+  
+  .day-letter {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+  .days .col {
+    font-size: 0.8rem;
+    padding: 8px 2px;
+  }
+  
+  .day-letter {
+    font-size: 0.8rem;
+  }
+}
+
+.cell {
+  position: relative;
+  height: 100px;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #fff;
+  flex: 1;
+  min-width: 0;
+}
+
+.cell:hover {
+  background-color: #f5f5f5;
+}
+
+.cell.disabled {
+  color: #c5c5c5;
+  pointer-events: none;
+  background-color: #f9f9f9;
+}
+
+/* Today styling - always light blue background */
+.cell.today {
+  background-color: #e8f0fe !important;
+  font-weight: bold;
+  color: #1a73e8;
+}
